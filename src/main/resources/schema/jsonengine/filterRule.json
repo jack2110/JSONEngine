@@ -1,0 +1,51 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.FilterRule",
+	"javaInterfaces" : ["com.jsonengine.api.Rule"],
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "filter_rule:v1",
+	"title":"filter extract rule",
+	"name":"filterRule",
+	"description":"Filter rule expects to take an object arrays as input, and filter them out based on predefined list of support objects",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"identifier" : 
+    	{
+    		"description" : "The unique identifier for this rule. By default name convention, it is expected to be the complete class name for this rule",
+    		"type": "string",
+    		"default" : "filterRule"
+    	},
+    	
+    	"handler" : 
+    	{
+    		"description" : "The identifier of handler for this rule. It should help to identify the handler class/function for this rule",
+    		"type": "string",
+    		"default" : "FilterRuleHandler"
+    	},
+    	
+    	"sourceField" :
+    	{
+    		"description" : "The name of source fields. Note, this name MUST BE absolute name in resource json",
+    		"type": "string"
+    	},
+    	
+    	"supportItems" :
+    	{
+    		"description" : "a set of supported objects",
+    		"type": "array",
+    		"items" : 
+        	{
+        		"type" : "string"
+        	}
+    	}
+    	
+    },
+    
+    "required": ["identifier", "handler", "sourceField", "supportItems"]
+}

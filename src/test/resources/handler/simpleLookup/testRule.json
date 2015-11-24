@@ -1,0 +1,25 @@
+{
+		"description" : "This is a rule.json for simple lookup rule test",
+    
+    
+    	"rules": 
+    	[
+    		{
+    			"description" : "Sample of simpleLookup rule",
+    			
+    			"targetField" : "test.field1",
+    			
+    			"executeRuleType" : "SimpleLookupRule",
+    
+    			"executeRule": 
+    			{
+    				"identifier" : "testSimpleLookup",
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"lookupFile" : "handler/simpleLookup/lookupTable.txt"
+    			}
+    			
+    		}
+    	]
+}

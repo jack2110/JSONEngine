@@ -1,0 +1,67 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.SimpleLookupRule",
+	"javaInterfaces" : ["com.jsonengine.api.Rule"],
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "simple_lookup_rule:v1",
+	"title":"simple lookup extract rule",
+	"name":"simpleLookupRule",
+	"description":"This rule take an arrays or single string object as input, and convert them into correspondent value based on lookup table.",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"identifier" : 
+    	{
+    		"description" : "The unique identifier for this rule. This rule handler is expected to have state of rule and should not be shared. So a unique idenifier should be given.",
+    		"type": "string"
+    	},
+    	
+    	"handler" : 
+    	{
+    		"description" : "The identifier of handler for this rule. It should help to identify the handler class/function for this rule",
+    		"type": "string",
+    		"default" : "SimpleLookupRuleHandler"
+    	},
+    	
+    	"sourceField" :
+    	{
+    		"description" : "The name of source fields. Note, this name MUST BE absolute name in resource json",
+    		"type": "string"
+    	},
+    	
+    	"lookupFile" :
+    	{
+    		"description" : "The lookup file name",
+    		"type": "string"
+    	},
+    	
+    	"delimiter" :
+    	{
+    		"description" : "delimiter between lookup key and value",
+    		"type": "string",
+    		"default" : "="
+    	},
+    	
+    	"separator" :
+    	{
+    		"description" : "The name of source fields. Note, this name MUST BE absolute name in resource json",
+    		"type": "string",
+    		"default" : ","
+    	},
+    	
+    	"isSingle" :
+    	{
+    		"description" : "Indicates if the output should be a single object instead of an array, the default is true",
+    		"type": "boolean",
+    		"default" : false
+    	}
+    	
+    },
+    
+    "required": ["identifier", "handler", "sourceField", "lookupFile"]
+}

@@ -1,0 +1,30 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.ExtractRuleSet",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "extract_rule_set:v1",
+	"title":"extract rule set",
+	"name":"extractRuleSet",
+	"description":"A file with all the extract rules by which a json engine can run",
+    
+    "properties": {
+    	"description": 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    
+    
+    	"rules": 
+    	{
+    		"description" : "single extract rule for building a single field of output json",
+    		"type": "array",
+    		"items" : 
+        	{
+        		"$ref" : "extractRule.json"
+        	}
+    	}
+    },
+    
+    "required": ["rules"]
+}

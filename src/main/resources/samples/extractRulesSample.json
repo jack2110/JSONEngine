@@ -1,0 +1,66 @@
+{
+		"description" : "This is a sample example of extractRules json",
+    
+    
+    	"rules": 
+    	[
+    		{
+    			"description" : "Sample of Mapping rule",
+    			
+    			"targetField" : "test.field1",
+    			
+    			"executeRuleType" : "MappingRule",
+    
+    			"executeRule": 
+    			{
+    				"description" : "Simple mapping rule",
+    	
+    				"sourceField" : "convertresult.item1"
+    			}
+    			
+    		},
+    		
+    		{
+    			"description" : "Sample of merge rule",
+    			
+    			"targetField" : "test.field2",
+    
+    			"executeRuleType" : "MergeRule",
+    
+    			"executeRule": 
+    			{
+    				"description" : "Simple merge rule",
+    				
+    				"source_field" :
+    				[
+    					"convertresult.item2",
+    					"convertresult.item3"
+    				],	
+    	
+    				"delimiter" : ","   			
+    			}
+    		},
+    		
+    		{
+    			"description" : "Sample of split rule",
+    			
+    			"targetField" : "test.field3",
+    
+    			"executeRuleType" : "SplitRule",
+    
+    			"executeRule":  
+    			{
+    				"description" : "Simple split rule",
+    				
+    				"source_field" : 
+    				{
+    					"description" : "Simple mapping rule",
+    	
+    					"source_field" : "convertresult.item1"
+    				}
+    						
+    			}
+    		}
+    	]
+
+}

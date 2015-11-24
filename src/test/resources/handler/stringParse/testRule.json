@@ -1,0 +1,102 @@
+{
+		"description" : "This is a rule.json for string parse rule test",
+    
+    
+    	"rules": 
+    	[
+    		{
+    			"description" : "Sample of string parse rule",
+    			
+    			"targetField" : "test.address",
+    			
+    			"executeRuleType" : "StringParseRule",
+    
+    			"executeRule": 
+    			{
+    				"identifier" : "testStringParse",
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"pattern" : "^(.+)(,)(.+)(,)(.+)(\\s)(.+)(,)(.+)$",
+    	
+    				"groupNo" : "0"
+    			}
+    		},
+    		
+    		{
+    			"description" : "Sample of string parse rule",
+    			
+    			"targetField" : "test.city",
+    			
+    			"executeRuleType" : "StringParseRule",
+    
+    			"executeRule": 
+    			{
+    				"identifier" : "testStringParse",
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"pattern" : "^(.+)(,)(.+)(,)(.+)(\\s)(.+)(,)(.+)$",
+    	
+    				"groupNo" : "2"
+    			}
+    		},
+    		
+    		{
+    			"description" : "Sample of string parse rule",
+    			
+    			"targetField" : "test.state",
+    			
+    			"executeRuleType" : "StringParseRule",
+    
+    			"executeRule": 
+    			{
+    				"identifier" : "testStringParse",
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"pattern" : "^(.+)(,)(.+)(,)(.+)(\\s)(.+)(,)(.+)$",
+    	
+    				"groupNo" : "4"
+    			}
+    		},
+    		
+    		{
+    			"description" : "Sample of string parse rule",
+    			
+    			"targetField" : "test.zipcode",
+    			
+    			"executeRuleType" : "StringParseRule",
+    
+    			"executeRule": 
+    			{
+    				"identifier" : "testStringParse",
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"pattern" : "^(.+)(,)(.+)(,)(.+)(\\s)(.+)(,)(.+)$",
+    	
+    				"groupNo" : "6"
+    			}
+    		},
+    		
+    		{
+    			"description" : "Sample of string parse rule",
+    			
+    			"targetField" : "test.country",
+    			
+    			"executeRuleType" : "StringParseRule",
+    
+    			"executeRule": 
+    			{
+    				"identifier" : "testStringParse",
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"pattern" : "^(.+)(,)(.+)(,)(.+)(\\s)(.+)(,)(.+)$",
+    	
+    				"groupNo" : "8"
+    			}
+    		}
+    	]
+}

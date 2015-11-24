@@ -1,0 +1,29 @@
+{
+		"description" : "This is a rule.json for filter rule test",
+    
+    
+    	"rules": 
+    	[
+    		{
+    			"description" : "Sample of filter rule",
+    			
+    			"targetField" : "test.field1",
+    			
+    			"executeRuleType" : "FilterRule",
+    
+    			"executeRule": 
+    			{
+    	
+    				"sourceField" : "src.item1", 
+    				
+    				"supportItems" :
+    				[
+    					"artists",
+    					"playlist",
+    					"album"
+    				]
+    			}
+    			
+    		}
+    	]
+}

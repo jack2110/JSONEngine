@@ -1,0 +1,28 @@
+{
+		"description" : "This is a rule.json for merging rule test",
+    
+    
+    	"rules": 
+    	[
+    		{
+    			"description" : "Sample of merge rule",
+    			
+    			"targetField" : "test.location",
+    			
+    			"executeRuleType" : "MergeRule",
+    
+    			"executeRule": 
+    			{
+    	
+    				"sourceField" : 
+    				[
+    					"geocode.latitude",
+    					"geocode.longitude"
+    				],
+    				
+    				"delimiter" : "," 
+    			}
+    		}
+    		
+    	]
+}

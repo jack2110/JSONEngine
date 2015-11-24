@@ -1,0 +1,40 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.MappingRule",
+	"javaInterfaces" : ["com.jsonengine.api.Rule"],
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "mapping_rule:v1",
+	"title":"mapping extract rule",
+	"name":"mappingRule",
+	"description":"Directly mapping a source json object to a target json object field.",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"identifier" : 
+    	{
+    		"description" : "The unique identifier for this rule. By default name convention, it is expected to be the complete class name for this rule",
+    		"default" : "mappingRule",
+    		"type": "string"
+    	},
+    	
+    	"handler" : 
+    	{
+    		"description" : "The identifier of handler for this rule. It should help to identify the handler class/function for this rule",
+    		"default" : "MappingRuleHandler",
+    		"type": "string"
+    	},
+    	
+    	"sourceField" :
+    	{
+    		"description" : "The name of resource field. Note, this name MUST BE absolute name in resource json",
+    		"type": "string"
+    	}
+    },
+    
+    "required": ["identifier", "handler", "sourceField"]
+}

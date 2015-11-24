@@ -1,0 +1,14 @@
+{
+		"src" : 
+		{
+			"item1" :
+			[
+				"artists",
+				"badArtists",
+    			"playlist",
+    			"badplaylist",
+    			"album",
+    			"badAlbum"
+			]
+		}
+}

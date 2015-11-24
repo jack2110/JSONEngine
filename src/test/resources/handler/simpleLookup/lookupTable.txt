@@ -1,0 +1,4 @@
+food=Chinese food,Japanese food
+sushi=Japanese food,Japanese Restaurant
+restaurant=Japanese Restaurant,Chinese Restrauant
+toy=Toy store,Girl Toy,Boy Toy

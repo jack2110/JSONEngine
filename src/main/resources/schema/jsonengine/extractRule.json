@@ -1,0 +1,45 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.ExtractRule",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "extract_rule:v1",
+	"title":"extract rule",
+	"name":"extractRule",
+	"description":"A single extract rules which to build a single field of target json",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"targetField" :
+    	{
+    		"description" : "The name of target field. Note, this name MUST BE absolute name in target json",
+    		"type": "string"
+    	},
+    	
+    	"executeRuleType" : 
+    	{
+    		"description" : "The type of execute rule. It should match with the name of rule",
+    		"type": "string"
+    	},
+    
+    
+    	"executeRule": 
+    	{
+    		"description" : "extract rule for building this field",
+    		"type": "object",
+    		"oneOf" : 
+    		[
+    			{ "$ref" : "mappingRule.json"},
+    			{ "$ref" : "splitRule.json"},
+    			{ "$ref" : "mergeRule.json"}
+    			
+    		]
+    	}
+    },
+    
+    "required": ["targetField", "executeRuleType", "executeRule"]
+}

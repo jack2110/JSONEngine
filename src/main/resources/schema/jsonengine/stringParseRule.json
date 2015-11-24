@@ -1,0 +1,60 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.StringParseRule",
+	"javaInterfaces" : ["com.jsonengine.api.Rule"],
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "string_parse_rule:v1",
+	"title":"string parse extract rule",
+	"name":"springParseRule",
+	"description":"parse a source string (potentially) for multiple target fields. Note. It should only work on resource of string",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"identifier" : 
+    	{
+    		"description" : "The unique identifier for this rule. By default name convention, it is expected to be the complete class name for this rule",
+    		"type": "string",
+    		"default" : "stringParseRule"
+    	},
+    	
+    	"handler" : 
+    	{
+    		"description" : "The identifier of handler for this rule. It should help to identify the handler class/function for this rule",
+    		"type": "string",
+    		"default" : "StringParseRuleHandler"
+    	},
+    	
+    	"sourceField" :
+    	{
+    		"description" : "The name of source field. Note, this name MUST BE absolute name in resource json",
+    		"type": "string"
+    	},
+    	
+    	"pattern" :
+    	{
+    		"description" : "The regex pattern used to parse the string",
+    		"type": "string"
+    	},
+    	
+    	"groupNo" :
+    	{
+    		"description" : "indicate the group number of parse result for target field associated with this rule. Note, if offset out of index, an exception can be thrown",
+    		"type": "integer"
+    	},
+    	
+    	"hardFail" :
+    	{
+    		"description" : "indicate if a hard failure exception should be thrown if offset out of index. The default value is false",
+    		"type": "boolean",
+    		"default" : "false"
+    	}
+    	
+    },
+    
+    "required": ["identifier", "handler", "sourceField", "pattern", "groupNo"]
+}

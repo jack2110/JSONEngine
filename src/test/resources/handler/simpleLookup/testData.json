@@ -1,0 +1,12 @@
+{
+		"src" : 
+		{
+			"item1" :
+			[
+				"food",
+				"sushi",
+    			"restaurant",
+    			"toy"
+			]
+		}
+}

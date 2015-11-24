@@ -1,0 +1,32 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.AggregateExtractRules",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "aggregate_extract_rules:v1",
+	"title":"aggregate extract rules",
+	"name":"aggregateExtractRules",
+	"description":"A file carries multiple sets of ExtractRules for convenience. Each set of rules are supposed to work independently",
+    
+    "properties": {
+    	"description": 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"rulesetName": 
+    	{
+    		"description" : "the name of this rule set. It should be unique within file",
+    		"type": "string"
+    	},
+    
+    
+    	"ruleset": 
+    	{
+    		"description" : "single extract rule set for a json engine",
+    		"$ref": "extractRuleSet.json"
+    	}
+    },
+    
+    "required": ["rulesetName", "ruleset"]
+}

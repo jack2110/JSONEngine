@@ -1,0 +1,51 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.MergeRule",
+	"javaInterfaces" : ["com.jsonengine.api.Rule"],
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "merge_rule:v1",
+	"title":"merge extract rule",
+	"name":"mergeRule",
+	"description":"merge a set of source strings for a single target field. Note. It should only work on resource of string and use fixed delimited to merge",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"identifier" : 
+    	{
+    		"description" : "The unique identifier for this rule. By default name convention, it is expected to be the complete class name for this rule",
+    		"type": "string",
+    		"default" : "mergeRule"
+    	},
+    	
+    	"handler" : 
+    	{
+    		"description" : "The identifier of handler for this rule. It should help to identify the handler class/function for this rule",
+    		"type": "string",
+    		"default" : "MergeRuleHandler"
+    	},
+    	
+    	"sourceField" :
+    	{
+    		"description" : "The name of source fields. Note, this name MUST BE absolute name in resource json",
+    		"type": "array",
+    		"items" : 
+        	{
+        		"type" : "string"
+        	}
+    	},
+    	
+    	"delimiter" :
+    	{
+    		"description" : "The delimiter used to split the string",
+    		"type": "string"
+    	}
+    	
+    },
+    
+    "required": ["identifier", "handler", "sourceField", "delimiter"]
+}

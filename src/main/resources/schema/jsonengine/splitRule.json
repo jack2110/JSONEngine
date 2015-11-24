@@ -1,0 +1,66 @@
+{
+	"type":"object",
+	"javaType" : "com.jsonengine.schema.SplitRule",
+	"javaInterfaces" : ["com.jsonengine.api.Rule"],
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "split_rule:v1",
+	"title":"split extract rule",
+	"name":"splitRule",
+	"description":"split a source string (potentially) for multiple target field. Note. It should only work on resource of string and use fixed delimited to split",
+    
+    "properties": {
+    	"description" : 
+    	{
+    		"description" : "user can use this field to put notes",
+    		"type": "string"
+    	},
+    	
+    	"identifier" : 
+    	{
+    		"description" : "The unique identifier for this rule. By default name convention, it is expected to be the complete class name for this rule",
+    		"type": "string",
+    		"default" : "splitRule"
+    	},
+    	
+    	"handler" : 
+    	{
+    		"description" : "The identifier of handler for this rule. It should help to identify the handler class/function for this rule",
+    		"type": "string",
+    		"default" : "SplitRuleHandler"
+    	},
+    	
+    	"sourceField" :
+    	{
+    		"description" : "The name of source field. Note, this name MUST BE absolute name in resource json",
+    		"type": "string"
+    	},
+    	
+    	"delimiter" :
+    	{
+    		"description" : "The delimiter used to split the string",
+    		"type": "string"
+    	},
+    	
+    	"offset" :
+    	{
+    		"description" : "indicate the offset position of split result for target field associated with this rule. Note, if offset out of index, an exception can be thrown",
+    		"type": "number"
+    	},
+    	
+    	"hardFail" :
+    	{
+    		"description" : "indicate if a hard failure exception should be thrown if offset out of index. The default value is false",
+    		"type": "boolean",
+    		"default" : "false"
+    	},
+    	
+    	"trim" :
+    	{
+    		"description" : "will trim extra space from string",
+    		"type": "boolean",
+    		"default" : "true"
+    	}
+    },
+    
+    "required": ["identifier", "handler", "sourceField", "delimiter", "offset"]
+}
