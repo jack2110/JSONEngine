@@ -26,18 +26,10 @@
     		"type": "string"
     	},
     
-    
     	"executeRule": 
     	{
     		"description" : "extract rule for building this field",
-    		"type": "object",
-    		"oneOf" : 
-    		[
-    			{ "$ref" : "mappingRule.json"},
-    			{ "$ref" : "splitRule.json"},
-    			{ "$ref" : "mergeRule.json"}
-    			
-    		]
+    		"type": "object"
     	}
     },
     

@@ -18,8 +18,10 @@ public class ProcessContext {
 	private final Map<String, Object>	resultMap;
 
 	private final Map<String, Object>	cacheMap;
+	
+	private final JSONEngine engine;
 
-	protected ProcessContext( JSONObject resource ) {
+	protected ProcessContext( JSONObject resource, JSONEngine engine) {
 		if ( resource == null ) {
 			throw new IllegalArgumentException( "ProcessorContext requires a resource input." );
 		}
@@ -31,6 +33,8 @@ public class ProcessContext {
 		resultMap = new HashMap<String, Object>();
 
 		cacheMap = new HashMap<String, Object>();
+		
+		this.engine = engine;
 	}
 
 	public Object getFromResource( String key ) {
@@ -44,8 +48,20 @@ public class ProcessContext {
 	}
 
 	public Object getFromCache( String key ) {
-
-		return key == null ? null : cacheMap.get( key );
+		if(key == null){
+			return null;
+		}
+		
+		Object result = cacheMap.get(key);
+		if(result == null){
+			String tmpKey = TMP_PREFIX+key;
+			result = engine.processForSingleField(tmpKey, this);
+			if(result != null){
+				addToCache(key, result);
+			}
+		}
+		
+		return result;
 	}
 
 	public Object addToCache( String key, Object value ) {
@@ -54,8 +70,21 @@ public class ProcessContext {
 	}
 
 	public Object getFromResult( String key ) {
-
-		return key == null ? null : resultMap.get( key );
+		
+		if(key == null){
+			return null;
+		}
+		
+		Object result = resultMap.get(key);
+		if(result == null){
+			String tmpKey = RESULT_PREFIX+key;
+			result = engine.processForSingleField(key, this);
+			if(result != null){
+				addToResult(tmpKey, result);
+			}
+		}
+		
+		return result;
 	}
 
 	public Object addToResult( String key, Object value ) {

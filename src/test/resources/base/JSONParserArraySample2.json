@@ -1,0 +1,31 @@
+{
+
+	"event" : {
+   		"schedule": {
+            "bookinginfo": {
+                "bookinglink": {
+                    "booking_url": "http://www.shareasale.com/r.cfm?u=479796&b=234786&m=27601&afftrack=&urllink=gameboisf.eventbrite.com/",
+                    "provider": "ticketfly",
+                    "price": {
+                        "currency": "USD",
+                        "value": "15"
+                    }
+                }
+            },
+            "dates": {
+                "start": "2015-12-19",
+                "end": "2015-12-19"
+            },
+            "venue_id": "352454",
+            "event_time": "21:30:00"
+        },   
+      	"distance": "0.1",
+        "name": "Gameboi SF",
+        "id": "162281118",
+        "category": {
+            "catname": "Concerts - Others",
+            "cat": "900",
+            "id": "700"
+      	}	
+  	}
+}

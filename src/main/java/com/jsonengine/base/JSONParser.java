@@ -70,7 +70,7 @@ public class JSONParser {
 				Object value = ( (JSONObject) data ).get( token.fieldName );
 
 				if ( value == null || !( value instanceof JSONArray ) ) {
-					return value;
+					return parseWithKeys( keyList, value );
 				} else {
 					return parseArrayWithKeys( (JSONArray) value, token, keyList );
 				}
@@ -85,13 +85,14 @@ public class JSONParser {
 
 			List<Object> resultList = new ArrayList<Object>();
 			jArray.forEach( json -> {
-				Object furtherResult = parseWithKeys( keyList, json );
+				List<String> cloneKeyList = new ArrayList<String>( keyList );
+				Object furtherResult = parseWithKeys( cloneKeyList, json );
 				if ( furtherResult != null ) {
 					resultList.add( furtherResult );
 				}
 			} );
 
-			return resultList.isEmpty();
+			return resultList.isEmpty() ? null : resultList;
 		} else {
 			return data;
 		}

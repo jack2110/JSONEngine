@@ -18,6 +18,8 @@ public class JSONEngine {
 	private final RuleTreeNode							rulesTree;
 
 	private final Map<String, ExtractRuleHandler<?>>	ruleHandlers;
+	
+	private final Map<String, Rule>	rules;
 
 	public JSONEngine( RuleTreeNode rulesTree ) {
 		if ( rulesTree == null ) {
@@ -26,6 +28,7 @@ public class JSONEngine {
 
 		this.rulesTree = rulesTree;
 		ruleHandlers = new HashMap<String, ExtractRuleHandler<?>>();
+		rules = new HashMap<String, Rule>();
 
 		initRules( this.rulesTree );
 	}
@@ -36,11 +39,15 @@ public class JSONEngine {
 			return;
 		}
 
-		rulesTree.getChildren().values().forEach( rule -> {
-			if ( rule.getRule() != null ) {
-				insertRule( rule.getRule() );
+		rulesTree.getChildren().values().forEach( ruleNode -> {
+			if ( ruleNode.getRule() != null ) {
+				if(!rules.containsKey(ruleNode.getAbsolutePath())){
+					rules.put(ruleNode.getAbsolutePath(), ruleNode.getRule());
+				}
+				
+				insertRule( ruleNode.getRule() );
 			} else {
-				initRules( rule );
+				initRules( ruleNode );
 			}
 		} );
 	}
@@ -67,7 +74,7 @@ public class JSONEngine {
 			return null;
 		}
 
-		ProcessContext context = new ProcessContext( resource );
+		ProcessContext context = new ProcessContext( resource, this );
 
 		return internalProcessing( this.rulesTree, context );
 	}
@@ -96,6 +103,16 @@ public class JSONEngine {
 		}
 
 		return result;
+	}
+	
+	public Object processForSingleField(String key, ProcessContext context){
+		if(key == null){
+			return null;
+		}
+		
+		Rule rule = this.rules.get(key);
+		
+		return rule == null ? null : buildWithRule(rule, context);
 	}
 
 	private Object buildWithRule( Rule rule, ProcessContext context ) {

@@ -1,0 +1,55 @@
+{
+
+ "event" : {
+   		"image": "154645177.jpg",
+        "schedule": {
+            "bookinginfo": {
+            "bookinglink": {
+                "booking_url": "http://eventseeker.com/book/viator/5685UNION/154645177",
+                "provider": "viator",
+                "price": {
+                    "currency": "USD",
+                    "value": "72"
+                }
+            }
+        },
+        "dates": [
+            {
+                "start": "2015-12-22",
+                "end": "2015-12-22"
+            },
+            {
+                "start": "2015-12-23",
+                "end": "2015-12-23"
+            },
+            {
+                "start": "2015-12-24",
+                "end": "2015-12-24"
+            },
+            {
+                "start": "2015-12-25",
+                "end": "2015-12-25"
+            },
+            {
+                "start": "2015-12-26",
+                "end": "2015-12-26"
+            }
+        ],
+        "venue_id": "388260"
+    },
+    "distance": "0.9",
+    "image_attribution": {
+        "mobi_res_path": "http://c416811.r11.cf2.rackcdn.com/",
+        "low_res_path": "http://c364950.r50.cf2.rackcdn.com/",
+        "high_res_path": "http://c364949.r49.cf2.rackcdn.com/"
+    },
+    "name": "VIP Happy Hour Tour Of Union Square",
+    "id": "154645177",
+    "category": {
+        "catname": "Tours - Others",
+        "cat": "911",
+        "id": "711"
+    },
+    "desc": "Your tour departs from Serrano Hotel in Union Square, a public plaza and vibrant shopping, dining, hotel and culture center in downtown San Francisco.Follow your local guide on an easy, flat half-mile walk to three of the area’s most talked-about cocktail lounges. At each place, you’ll feel like a VIP as you’re ushered to a table reserved specifically for you, plus you’ll get the inside scoop on the city’s cherished bar and cocktail culture by meeting with the owners, bartenders, mixologists and industry experts. Enjoy one drink at all three places, which vary depending on the day of the tour. Savor San Francisco’s most storied drink, the Pisco Punch, or sip high-end Hudson Whiskey from applewood-smoked snifter glasses torched right beside your table. Pucker up for a spicy tequila cocktail at a historic speakeasy, or head to Clock Bar for a Chartreuse Swizzle, once voted one of America's top 10 cocktails! While your Union Square cocktail lounge tour ends a few blocks from Serrano Hotel, your guide will gladly point you in the right direction to continue your evening with more drinks, dinner or entertainment nearby.Please note: Stops are subject to change based on availability."
+	}
+}

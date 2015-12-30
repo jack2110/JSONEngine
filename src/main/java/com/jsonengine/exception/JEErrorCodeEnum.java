@@ -19,6 +19,10 @@ public enum JEErrorCodeEnum {
 
 	INVALID_PARAMETERS( CCError.INVALID_PARAMETERS, "Some or one of required parameters are missed or invalid" ),
 
+	UNINITIAL_DATA( CCError.UNINITIAL_DATA, "The retrieving data has not been initialized yet" ),
+
+	ILLEGAL_OVERRIDE( CCError.ILLEGAL_OVERRIDE, "The retrieving data has not been initialized yet" ),
+
 	INTERNAL_ERROR( CCError.INTERNAL_ERROR, "Operation failes due to a unknown internal error" );
 
 	JEErrorCodeEnum( String code, String description ) {
@@ -62,6 +66,10 @@ interface CCError {
 	String	FILE_READ_FAILURE		= "fileReadFailure";
 
 	String	INVALID_PARAMETERS		= "invalidParameters";
+
+	String	UNINITIAL_DATA			= "uninitialData";
+
+	String	ILLEGAL_OVERRIDE		= "illegalOverride";
 
 	String	INTERNAL_ERROR			= "internalError";
 
